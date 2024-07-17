@@ -25,7 +25,7 @@ async def get_news(team_name: str):
                 response.raise_for_status()
                 return await response.json()
     except aiohttp.ClientResponseError as e:
-        if e.status == 404:
+        if e:
             return None
         raise
     except Exception as e:
@@ -80,7 +80,7 @@ async def get_team(team_name: str):
                 response.raise_for_status()
                 return await response.json()
         except aiohttp.ClientResponseError as e:
-            if e.status == 404:
+            if e:
                 return None
             raise
         except Exception as e:
