@@ -11,7 +11,7 @@ def get_news():
         list: A list of news articles.
     """
     try:
-        news_list = requests.get("http://localhost:8000/news")
+        news_list = requests.get("https://sports-aggregator.onrender.com/news")
         news_list.raise_for_status()
         return news_list.json()
     except requests.exceptions.RequestException as e:

@@ -4,7 +4,7 @@ import aiohttp
 import streamlit as st
 from conversion import get_base64_image, default_image_path
 
-BASE_URL = "http://localhost:8000"
+BASE_URL = "https://sports-aggregator.onrender.com/"
 
 async def get_news(team_name: str):
     """
