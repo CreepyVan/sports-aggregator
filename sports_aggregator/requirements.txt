@@ -3,7 +3,7 @@ uvicorn
 python-jose
 pyjwt
 requests
-sqlalchemy
+sqlalchemy 
 bs4
 pandas
 streamlit
