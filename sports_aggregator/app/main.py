@@ -6,8 +6,8 @@ Main module for FastAPI application.
 import random  # Standard library import
 from sqlalchemy.orm import session  # Third-party import
 from fastapi import FastAPI, Depends  # Third-party import
-from app import models  # First-party import
-from app import schema  # First-party import
+from db_model.models import models  # First-party import
+from db_model.schemas import schema  # First-party import
 from db_model.database.database import engine, get_db  # First-party import
 from app.routers import player, teams  # First-party import
 

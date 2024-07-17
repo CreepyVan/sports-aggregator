@@ -6,8 +6,8 @@ from scrapper.scrapper_team import (
     scrape_fixtures, scrape_stats, scrape_players,
     scrape_name_image, scrape_news
 )
-from app import models
-from app import schema
+from db_model.models import models
+from db_model.schemas import schema
 from scrapper.finder import find_team_link, team_player_link, team_news_link
 from db_model.database.database import get_db
 from fuzzywuzzy import fuzz

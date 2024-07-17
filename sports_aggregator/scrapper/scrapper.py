@@ -7,7 +7,7 @@ import time
 import re
 from selenium import webdriver
 from bs4 import BeautifulSoup as bs
-from app import schema
+from db_model.schemas import schema
 from repository.browser import init_driver
 from .search import find_stat_link, find_wikipedia_link, find_news_link
 

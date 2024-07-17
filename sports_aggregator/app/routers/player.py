@@ -3,8 +3,8 @@ from urllib.parse import unquote
 from fastapi import APIRouter, Depends, status, HTTPException
 from sqlalchemy.orm import Session
 from db_model.database.database import get_db
-from app import schema
-from app import models
+from db_model.schemas import schema
+from db_model.models import models
 from scrapper.scrapper import scrape_player_data, scrape_player_stats, scrape_player_news, scrape_player_name
 
 router = APIRouter(
