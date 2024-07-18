@@ -57,6 +57,7 @@ async def add_team(team_name: str):
         dict: The added team's information.
     """
     async with aiohttp.ClientSession() as session:
+        st.write("post")
         async with session.post(f"{BASE_URL}/teams/{team_name}") as response:
             response.raise_for_status()
             return await response.json()
@@ -77,6 +78,7 @@ async def get_team(team_name: str):
     async with aiohttp.ClientSession() as session:
         try:
             async with session.get(f"{BASE_URL}/teams/{team_name}") as response:
+                
                 response.raise_for_status()
                 return await response.json()
         except aiohttp.ClientResponseError as e:
