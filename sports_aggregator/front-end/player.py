@@ -18,7 +18,7 @@ def players():
 
     if player_name:
         try:
-            response = requests.get(f'https://sports-aggregator.onrender.com/{player_name}')
+            response = requests.get(f'https://sports-aggregator.onrender.com/player/{player_name}')
         except Exception as e:
             raise e
 
