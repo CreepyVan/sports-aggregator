@@ -22,7 +22,7 @@ RUN wget -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/11
     && unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /sports_aggregator
 
 # Copy the requirements file into the container
 COPY requirements.txt requirements.txt
@@ -36,5 +36,7 @@ COPY . .
 # Expose the port the app runs on
 EXPOSE 8000
 
-# Command to run the application
-CMD ["uvicorn", "sports_aggregator.main:app", "--host", "0.0.0.0", "--port", "8000" ]
+ADD start.sh /
+RUN chmod +x / start.sh
+
+CMD [ "/start.sh" ]
