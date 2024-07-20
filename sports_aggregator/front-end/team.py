@@ -56,9 +56,14 @@ async def add_team(team_name: str):
     Returns:
         dict: The added team's information.
     """
+    payload = {}  # Assuming an empty payload for the POST request
+    headers = {
+                "Content-Type": "application/json"
+                # Add any other headers required by your API
+            }
     async with aiohttp.ClientSession() as session:
         st.write("post")
-        async with session.post(f"{BASE_URL}/teams/{team_name}") as response:
+        async with session.post(f"{BASE_URL}/teams/{team_name}",json=payload,headers=headers) as response:
             print("hi")
             response.raise_for_status()
             return await response.json()
