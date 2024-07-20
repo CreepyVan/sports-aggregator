@@ -26,6 +26,9 @@ def init_driver():
     )
     chrome_options.add_argument("--disable-javascript")
     #chrome_options.add_argument("--disk-cache-dir=./cache")  # Changed to a local directory
+    chrome_options.binary_location = "/usr/bin/google-chrome-stable"
+
+    service = Service('/usr/local/bin/chromedriver')
 
     prefs = {
         "profile.managed_default_content_settings.images": 2,
