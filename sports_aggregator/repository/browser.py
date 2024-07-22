@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-import chromedriver_binary  # Adds chromedriver binary to path
+import webdriver_manager.chrome import chromeDriverManager# Adds chromedriver binary to path
 
 def init_driver():
     chrome_options = Options()
@@ -37,7 +37,7 @@ def init_driver():
     caps = DesiredCapabilities.CHROME.copy()
     caps['goog:loggingPrefs'] = {'browser': 'SEVERE'}  # Only capture severe errors
 
-    service = Service(executable_path=chromedriver_binary.chromedriver_filename)
+    service = Service(chromeDriverManager.install())
     driver = webdriver.Chrome(service=service, options=chrome_options)
     
     return driver
