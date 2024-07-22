@@ -14,5 +14,5 @@ selenium
 aiohttp
 aiosqlite
 chromedriver_binary
-
+webdriver_manager
 
