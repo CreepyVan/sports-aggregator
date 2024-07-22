@@ -22,7 +22,7 @@ RUN wget -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/11
     && unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
 
 # Set the working directory in the container
-WORKDIR /sports_aggregator
+WORKDIR /app
 
 # Copy the requirements file into the container
 COPY requirements.txt requirements.txt
@@ -30,13 +30,15 @@ COPY requirements.txt requirements.txt
 # Install the dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application code into the container
+# Copy the rest of the application code into the containr
 COPY . .
 
 # Expose the port the app runs on
 EXPOSE 8000
 
-ADD start.sh /
-RUN chmod +x / start.sh
+# Add the start script and set correct permissions
+ADD start.sh ./start.sh
+RUN chmod +x ./start.sh
 
-CMD [ "/start.sh" ]
+# Define the command to run the app
+CMD [  "./start.sh" ]
